@@ -2,6 +2,9 @@ import { Accounts } from 'meteor/accounts-base'
 
 Meteor.startup(() => {
     seed_actions();
+    seed_emotions();
+    seed_what();
+    seed_where();
 });
 
 function seed_actions(){
@@ -90,6 +93,40 @@ function seed_actions(){
   if(!exists){
     Actions.insert({
       action: 'praticando'
+    });
+  }
+}
+
+function seed_where(){
+  //sala
+  var exists = Where.findBy('sala');
+  if(!exists){
+    Where.insert({
+      where: 'sala'
+    });
+  }
+  //condomínio
+  var exists = Where.findBy('condomínio');
+  if(!exists){
+    Where.insert({
+      where: 'condomínio'
+    });
+  }
+  //quarto
+  var exists = Where.findBy('quarto');
+  if(!exists){
+    Where.insert({
+      where: 'quarto'
+    });
+  }
+}
+
+function seed_what(){
+  //Is this Love
+  var exists = What.findBy('Is this Love');
+  if(!exists){
+    What.insert({
+      what: 'Is this Love'
     });
   }
 }

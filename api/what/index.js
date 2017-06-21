@@ -4,13 +4,13 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { BaseCollection } from '../base.js';
 
 //api
-class CultureCollection extends BaseCollection {
+class WhatCollection extends BaseCollection {
 }
-export const Culture = new CultureCollection('culture');
+export const What = new WhatCollection('what');
 
 //schema
-Culture.schema = new SimpleSchema({
-  culture: {
+What.schema = new SimpleSchema({
+  what: {
     type: String,
   },
   action_id: {
@@ -23,4 +23,4 @@ Culture.schema = new SimpleSchema({
   }
 });
 
-Culture.attachSchema(Culture.schema);
+What.attachSchema(What.schema);
