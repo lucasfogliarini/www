@@ -5,6 +5,7 @@ Meteor.startup(() => {
     seed_emotions();
     seed_what();
     seed_where();
+    seed_who();
 });
 
 function seed_actions(){
@@ -97,30 +98,6 @@ function seed_actions(){
   }
 }
 
-function seed_where(){
-  //sala
-  var exists = Where.findBy('sala');
-  if(!exists){
-    Where.insert({
-      where: 'sala'
-    });
-  }
-  //condomínio
-  var exists = Where.findBy('condomínio');
-  if(!exists){
-    Where.insert({
-      where: 'condomínio'
-    });
-  }
-  //quarto
-  var exists = Where.findBy('quarto');
-  if(!exists){
-    Where.insert({
-      where: 'quarto'
-    });
-  }
-}
-
 function seed_what(){
   //Is this Love
   var exists = What.findBy('Is this Love');
@@ -138,6 +115,15 @@ function seed_what(){
     What.insert({
       action_id: atuando._id,
       what: 'caminhando'
+    });
+  }
+  //dançando
+  var exists = What.findBy('dançando');
+  if(!exists){
+    var atuando = Actions.findBy('atuando');
+    What.insert({
+      action_id: atuando._id,
+      what: 'dançando'
     });
   }
 }
@@ -176,6 +162,40 @@ function seed_emotions(){
   if(!exists){
     Emotions.insert({
       emotion: 'chorando'
+    });
+  }
+}
+
+function seed_where(){
+  //sala
+  var exists = Where.findBy('sala');
+  if(!exists){
+    Where.insert({
+      where: 'sala'
+    });
+  }
+  //condomínio
+  var exists = Where.findBy('condomínio');
+  if(!exists){
+    Where.insert({
+      where: 'condomínio'
+    });
+  }
+  //quarto
+  var exists = Where.findBy('quarto');
+  if(!exists){
+    Where.insert({
+      where: 'quarto'
+    });
+  }
+}
+
+function seed_who(){
+  //sozinho
+  var exists = Who.findBy('sozinho');
+  if(!exists){
+    Who.insert({
+      who: 'sozinho'
     });
   }
 }

@@ -10,12 +10,20 @@ export const Whats = new WhatsCollection('whats');
 
 //schema
 Whats.schema = new SimpleSchema({
-  username: {
-    type: String,
-  },
-  restaurant_id: {
+  action_id: {
     type: String,
     regEx: SimpleSchema.RegEx.Id
+  },
+  emotion_id: {
+    type: String,
+    regEx: SimpleSchema.RegEx.Id
+  },
+  where_id: {
+    type: String,
+    regEx: SimpleSchema.RegEx.Id
+  },
+  temperature: {
+    type: Number//-1,0,1
   },
   createdAt: {
     type: Date,
