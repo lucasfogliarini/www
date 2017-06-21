@@ -5,6 +5,9 @@ import { BaseCollection } from '../base.js';
 
 //api
 class WhatCollection extends BaseCollection {
+  findBy(what){
+    return super.findOne({ what: what });
+  }
 }
 export const What = new WhatCollection('what');
 

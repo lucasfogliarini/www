@@ -125,8 +125,19 @@ function seed_what(){
   //Is this Love
   var exists = What.findBy('Is this Love');
   if(!exists){
+    var escutando = Actions.findBy('escutando');
     What.insert({
-      what: 'Is this Love'
+      action_id: escutando._id,
+      what: 'Is this Love',
+    });
+  }
+  //caminhando
+  var exists = What.findBy('caminhando');
+  if(!exists){
+    var atuando = Actions.findBy('atuando');
+    What.insert({
+      action_id: atuando._id,
+      what: 'caminhando'
     });
   }
 }
