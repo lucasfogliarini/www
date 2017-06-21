@@ -19,10 +19,6 @@ What.schema = new SimpleSchema({
   action_id: {
     type: String,
     regEx: SimpleSchema.RegEx.Id
-  },
-  createdAt: {
-    type: Date,
-    denyUpdate: true,
   }
 });
 

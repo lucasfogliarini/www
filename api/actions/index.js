@@ -15,10 +15,6 @@ export const Actions = new ActionsCollection('actions');
 Actions.schema = new SimpleSchema({
   action: {
     type: String,
-  },
-  createdAt: {
-    type: Date,
-    denyUpdate: true,
   }
 });
 

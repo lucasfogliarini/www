@@ -15,10 +15,6 @@ export const Emotions = new EmotionsCollection('emotions');
 Emotions.schema = new SimpleSchema({
   emotion: {
     type: String,
-  },
-  createdAt: {
-    type: Date,
-    denyUpdate: true,
   }
 });
 

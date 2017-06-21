@@ -15,10 +15,6 @@ export const Where = new WhereCollection('where');
 Where.schema = new SimpleSchema({
   where: {
     type: String,
-  },
-  createdAt: {
-    type: Date,
-    denyUpdate: true,
   }
 });
 

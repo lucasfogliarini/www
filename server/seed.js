@@ -1,5 +1,11 @@
 import { Accounts } from 'meteor/accounts-base'
 
+import { Actions } from '/api/actions/';
+import { Emotions } from '/api/emotions/';
+import { What } from '/api/what/';
+import { Where } from '/api/where/';
+import { Who } from '/api/who/';
+
 Meteor.startup(() => {
     seed_actions();
     seed_emotions();
@@ -157,13 +163,6 @@ function seed_emotions(){
       emotion: 'rindo'
     });
   }
-  //chorando
-  var exists = Emotions.findBy('chorando');
-  if(!exists){
-    Emotions.insert({
-      emotion: 'chorando'
-    });
-  }
 }
 
 function seed_where(){
@@ -195,7 +194,7 @@ function seed_who(){
   var exists = Who.findBy('sozinho');
   if(!exists){
     Who.insert({
-      who: 'sozinho'
+      name: 'sozinho'
     });
   }
 }

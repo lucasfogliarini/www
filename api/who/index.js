@@ -15,10 +15,6 @@ export const Who = new WhoCollection('who');
 Who.schema = new SimpleSchema({
   name: {
     type: String,
-  },
-  createdAt: {
-    type: Date,
-    denyUpdate: true,
   }
 });
 
