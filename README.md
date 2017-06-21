@@ -7,7 +7,7 @@
 ### Running the app
 
 ```bash
-cd /www
+cd /wwww
 meteor npm install
 meteor
 ```

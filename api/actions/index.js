@@ -5,7 +5,7 @@ import { BaseCollection } from '../base.js';
 
 //api
 class ActionsCollection extends BaseCollection {
-  findByAction(action){
+  findBy(action){
     return super.findOne({ action: action });
   }
 }

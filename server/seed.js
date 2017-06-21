@@ -6,7 +6,7 @@ Meteor.startup(() => {
 
 function seed_actions(){
   //conversando sobre
-  var exists = Actions.findByAction('conversando sobre');
+  var exists = Actions.findBy('conversando sobre');
   if(!exists){
     Actions.insert({
       action: 'conversando sobre'
@@ -14,7 +14,7 @@ function seed_actions(){
   }
 
   //pensando sobre
-  var exists = Actions.findByAction('pensando sobre');
+  var exists = Actions.findBy('pensando sobre');
   if(!exists){
     Actions.insert({
       action: 'pensando sobre'
@@ -22,7 +22,7 @@ function seed_actions(){
   }
 
   //atuando
-  var exists = Actions.findByAction('atuando');
+  var exists = Actions.findBy('atuando');
   if(!exists){
     Actions.insert({
       action: 'atuando'
@@ -30,7 +30,7 @@ function seed_actions(){
   }
 
   //assistindo
-  var exists = Actions.findByAction('assistindo');
+  var exists = Actions.findBy('assistindo');
   if(!exists){
     Actions.insert({
       action: 'assistindo'
@@ -38,7 +38,7 @@ function seed_actions(){
   }
 
   //escutando
-  var exists = Actions.findByAction('escutando');
+  var exists = Actions.findBy('escutando');
   if(!exists){
     Actions.insert({
       action: 'escutando'
@@ -46,7 +46,7 @@ function seed_actions(){
   }
 
   //comendo
-  var exists = Actions.findByAction('comendo');
+  var exists = Actions.findBy('comendo');
   if(!exists){
     Actions.insert({
       action: 'comendo'
@@ -54,7 +54,7 @@ function seed_actions(){
   }
 
   //bebendo
-  var exists = Actions.findByAction('bebendo');
+  var exists = Actions.findBy('bebendo');
   if(!exists){
     Actions.insert({
       action: 'bebendo'
@@ -62,7 +62,7 @@ function seed_actions(){
   }
 
   //jogando
-  var exists = Actions.findByAction('jogando');
+  var exists = Actions.findBy('jogando');
   if(!exists){
     Actions.insert({
       action: 'jogando'
@@ -70,7 +70,7 @@ function seed_actions(){
   }
 
   //usando
-  var exists = Actions.findByAction('usando');
+  var exists = Actions.findBy('usando');
   if(!exists){
     Actions.insert({
       action: 'usando'
@@ -78,7 +78,7 @@ function seed_actions(){
   }
 
   //lendo
-  var exists = Actions.findByAction('lendo');
+  var exists = Actions.findBy('lendo');
   if(!exists){
     Actions.insert({
       action: 'lendo'
@@ -86,10 +86,48 @@ function seed_actions(){
   }
 
   //praticando
-  var exists = Actions.findByAction('praticando');
+  var exists = Actions.findBy('praticando');
   if(!exists){
     Actions.insert({
       action: 'praticando'
+    });
+  }
+}
+
+function seed_emotions(){
+  //amando
+  var exists = Emotions.findBy('amando');
+  if(!exists){
+    Emotions.insert({
+      emotion: 'amando'
+    });
+  }
+  //irritado
+  var exists = Emotions.findBy('irritado');
+  if(!exists){
+    Emotions.insert({
+      emotion: 'irritado'
+    });
+  }
+  //chorando
+  var exists = Emotions.findBy('chorando');
+  if(!exists){
+    Emotions.insert({
+      emotion: 'chorando'
+    });
+  }
+  //rindo
+  var exists = Emotions.findBy('rindo');
+  if(!exists){
+    Emotions.insert({
+      emotion: 'rindo'
+    });
+  }
+  //chorando
+  var exists = Emotions.findBy('chorando');
+  if(!exists){
+    Emotions.insert({
+      emotion: 'chorando'
     });
   }
 }
