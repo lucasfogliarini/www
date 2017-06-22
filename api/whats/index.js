@@ -12,42 +12,47 @@ import { Who } from '/api/who/';
 class WhatsCollection extends BaseCollection {
    guess(){
      let what = this.guess_what();
+     return what;
      let emotion = this.guess_emotion();
      let where = this.guess_where();
      let temperature = this.guess_temperature();
      let who = this.guess_who();
+     return what + " " + emotion + " " + where + " " + temperature + " " + who;
    }
    guess_what(){
      //
-
-     let actions = Actions.find();.map(function(e) { return e.action; } );
-     let action = this.random(actions);
-
-     let whatList = What.find({action_id: action._id }).map(function(e) { return e.what; } );
-     let what = this.random(whatList);
-
+     let max = Actions.find().count();
+     let random = this.random(max);
+     let action = Actions.find({}, { skip: 1});
+     return action;
+    //  let what = What.findOne({ action_id: action._id });
+    //  return action.action + " " + what.what;
    }
    guess_emotion(){
      //
 
-      let emotions = Emotions.find().map(function(e) { return e.emotion; } );
-      return this.random(emotions);
+     let max = Emotions.find().count();
+     let random = this.random(max);
+     return Emotions.find({}, { skip: random, limit: 1 }).emotion;
    }
    guess_where(){
      //
 
-      let where = Emotions.find().map(function(e) { return e.where; } );
-      return this.random(where);
+     let max = Where.find().count();
+     let random = this.random(max);
+     return Where.find({}, { skip: random, limit: 1 }).where;
    }
    guess_temperature(){
-     return this.random(["morno","quente","frio"]);
+     let random = this.random(3);
+     return ["morno","quente","frio"][random];
    }
    guess_who(){
-     let who = Emotions.find().map(function(e) { return e.name; } );
-     return this.random(who);
+     let max = Who.find().count();
+     let random = this.random(max);
+     return Who.find({}, { skip: random, limit: 1 }).who;
    }
-   random(array){
-      return array[Math.floor(Math.random() * array.length)];
+   random(max){
+      return Math.floor(Math.random() * max) + 0;
    }
 }
 export const Whats = new WhatsCollection('whats');
